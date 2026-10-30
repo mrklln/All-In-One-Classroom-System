@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import BottomNav from './components/BottomNav'
 import Drawer from './components/Drawer'
@@ -19,7 +19,7 @@ import Settings from './components/Settings'
 import { SUBJECTS, ACTIVITIES, TITLES } from './data'
 
 export default function App() {
-  const [screen, setScreen] = useState('login')
+  const [screen, setScreen] = useState(() => localStorage.getItem('screen') || 'login')
   const [subject, setSubject] = useState(SUBJECTS[0])
   const [tab, setTab] = useState('Overview')
   const [activity, setActivity] = useState(ACTIVITIES[1])
@@ -47,9 +47,13 @@ export default function App() {
 
   const [settings, setSettings] = useState({ notifications: true, reminders: true, sound: true, dark: false})
   
+  useEffect(() => {
+    localStorage.setItem('screen', screen)
+  },[screen])
+
   return (
     <div className="min-h-screen grid place-items-center bg-gray-300 sm:p-4">
-      <div className={`relative flex flex-col w-full sm:max-w-[390px] h-screen sm:h-[800px] app-surface sm:rounded-[2rem] sm:border-4 border-black overflow-hidden ${settings.dark ? 'dark' : ''}`}>
+      <div className={`relative flex flex-col w-full sm:max-w-97.5 h-screen sm:h-200 app-surface sm:rounded-4xl sm:border-4 border-black overflow-hidden ${settings.dark ? 'dark' : ''}`}>
         {screen === 'login' ? (
           <Login onSuccess={() => setScreen('home')} />
         ) : (

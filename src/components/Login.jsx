@@ -24,7 +24,7 @@ export default function Login({ onSuccess }) {
 
       <label className="w-full flex items-center gap-2 rounded-full bg-gray-200 px-4 py-2.5">
         <Icon name="user" className="w-4 h-4 text-gray-600" />
-        <input value={id} onChange={(e) => setId(e.target.value)} placeholder="Student/Professor ID or Email"
+        <input value={id} onChange={(e) => setId(e.target.value)} placeholder="ID Number or School Email"
           className="flex-1 bg-transparent outline-none text-sm" />
       </label>
       <label className="w-full flex items-center gap-2 rounded-full bg-gray-200 px-4 py-2.5 mt-3">

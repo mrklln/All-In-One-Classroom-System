@@ -10,7 +10,7 @@ export default function Home({ go, openSubject }) {
     { label: 'Profile', sub: 'View your information', icon: 'user', to: 'profile' },
   ]
   return (
-    <div className="p-4 space-y-4">
+    <div className="p-4 space-y-5">
       <div className="rounded-2xl p-4 flex items-center justify-between" style={{ background: C.card }}>
         <div>
           <h2 className="text-xl font-extrabold" style={{ color: C.dark }}>Welcome, {USER.first}!</h2>
@@ -19,7 +19,7 @@ export default function Home({ go, openSubject }) {
         <span className="text-4xl" aria-hidden="true">📚</span>
       </div>
 
-      <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-1 [scrollbar-none] [&::-webkit-scrollbar]:hidden">
         {SUBJECTS.map((s) => (
           <div key={s.code} className="snap-start shrink-0 w-[85%] rounded-2xl p-4" style={{ background: C.card }}>
             <h3 className="font-extrabold text-lg" style={{ color: C.dark }}>{s.code}</h3>
