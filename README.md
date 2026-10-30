@@ -1,6 +1,6 @@
 # All-In-One Classroom System
 
-A high-fidelity, interactive mobile prototype for a classroom app where students can view their subjects, check and submit activities, and message their class group chats.
+A high-fidelity, interactive mobile prototype for a classroom application where students can view their subjects, check and submit activities, and message their class group chats.
 
 Made for **ITEC 80 (Human Computer Interaction)** at Cavite State University, Tanza Campus.
 
